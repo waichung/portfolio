@@ -1,7 +1,6 @@
 import React from 'react';
-import Header from './Header';
-import Something from './Something';
 import lax from 'lax.js';
+import Introduction from './Introduction';
 
 class App extends React.Component {
 
@@ -12,13 +11,14 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = { showBubble: false }
-    lax.setup()
-    if (typeof window !== 'undefined') {
-      document.addEventListener('scroll', function(x) {
-        lax.update(window.scrollY)
-      }, false)
-    }
-    lax.update(window.scrollY)
+  }
+
+  componentDidUpdate() {
+    lax.setup();
+    document.addEventListener('scroll', function(x) {
+      lax.update(window.scrollY)
+    }, false);
+    lax.update(window.scrollY);
   }
 
   componentDidMount () {
@@ -30,8 +30,7 @@ class App extends React.Component {
   render () {
     return (
       <div id="main">
-        <Header loadState={this.state.hasWindow}/>
-        <Something />
+        <Introduction />
       </div>
     );
   }
