@@ -1,6 +1,7 @@
 import React from 'react';
 import lax from 'lax.js';
 import Introduction from './Introduction';
+// import Something from './Something';
 
 class App extends React.Component {
 
@@ -9,15 +10,13 @@ class App extends React.Component {
   }
 
   constructor(props) {
-    super(props)
-    this.state = { showBubble: false }
-  }
-
-  componentDidUpdate() {
+    super(props);
     lax.setup();
-    document.addEventListener('scroll', function(x) {
-      lax.update(window.scrollY)
-    }, false);
+    if (typeof window !== 'undefined') {
+      document.addEventListener('scroll', function(x) {
+        lax.update(window.scrollY);
+      }, false);
+    }
     lax.update(window.scrollY);
   }
 
@@ -31,6 +30,7 @@ class App extends React.Component {
     return (
       <div id="main">
         <Introduction />
+        {/* <Something /> */}
       </div>
     );
   }

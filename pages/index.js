@@ -1,8 +1,20 @@
-import HomePage from '../src/components';
+import dynamic from 'next/dynamic'
 
-const Home = _ => <HomePage />;
+const App = dynamic(
+  () => import('../src/components'),
+  {
+    ssr: false
+  }
+)
 
-export default Home;
+
+function IndexPage () {
+  return(
+   <App />
+  );
+}
+
+export default IndexPage;
 
 
 

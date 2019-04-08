@@ -2,19 +2,26 @@ import React from 'react';
 import lax from 'lax.js';
 
 
-function withLax(WrappedComponent, listOfIds) {
+function withLax(WrappedComponent) {
   return class extends React.Component {
     constructor(props) {
       super(props);
     }
 
     componentDidUpdate() {
-      console.log(listOfIds);
-      listOfIds.map(id => lax.addElement(document.getElementById(id)));
+      const listOfLaxElements = document.getElementsByClassName('lax');
+      console.log(listOfLaxElements);
+      for (let i=0; i<listOfLaxElements.length; i++) {
+        lax.addElement(listOfLaxElements[i]);
+      }
     }
 
     componentWillUnmount() {
-      listOfIds.map(id => lax.removeElement(document.getElementById(id)));
+      const listOfLaxElements = document.getElementsByClassName('lax');
+
+      for (let i=0; i<listOfLaxElements.length; i++) {
+        lax.removeElement(listOfLaxElements[i]);
+      }
     }
 
     render() {
