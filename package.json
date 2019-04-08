@@ -1,0 +1,23 @@
+{
+  "name": "wai-not",
+  "version": "1.0.0",
+  "description": "A personal portfolio for Wai-Not (Wai Chung)",
+  "dependencies": {
+    "lax.js": "^1.2.2",
+    "next": "^8.0.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.2.0",
+    "use-lax": "^2.0.1"
+  },
+  "author": "Wai Chung",
+  "license": "ISC",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.0"
+  }
+}
