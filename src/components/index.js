@@ -1,7 +1,7 @@
 import React from 'react';
 import lax from 'lax.js';
 import Introduction from './Introduction';
-// import Something from './Something';
+import Script from './Script';
 
 class App extends React.Component {
 
@@ -30,7 +30,7 @@ class App extends React.Component {
     return (
       <div id="main">
         <Introduction />
-        {/* <Something /> */}
+        <Script />
       </div>
     );
   }

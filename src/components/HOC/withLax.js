@@ -10,7 +10,6 @@ function withLax(WrappedComponent) {
 
     componentDidUpdate() {
       const listOfLaxElements = document.getElementsByClassName('lax');
-      console.log(listOfLaxElements);
       for (let i=0; i<listOfLaxElements.length; i++) {
         lax.addElement(listOfLaxElements[i]);
       }
@@ -18,7 +17,6 @@ function withLax(WrappedComponent) {
 
     componentWillUnmount() {
       const listOfLaxElements = document.getElementsByClassName('lax');
-
       for (let i=0; i<listOfLaxElements.length; i++) {
         lax.removeElement(listOfLaxElements[i]);
       }

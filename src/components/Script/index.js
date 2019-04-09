@@ -1,19 +1,21 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import styled from 'styled-components';
-import lax from 'lax.js';
+import withLax from '../HOC/withLax';
+// import lax from 'lax.js';
 
 const Script = () => {
-
   const ref = useRef();
   useEffect(() => {
     const browserWidth = window.innerWidth;
     const browserHeight = window.innerHeight;
-    lax.addElement(ref.current);
+    // lax.addElement(ref.current);
   });
 
   return (
     <Scene2>
-      <ScriptBlock ref={ref} data-lax-translate-x="(2*vh) 100, (3*vh) -elw">Only one</ScriptBlock>
+      <ScriptBlock className="lax" data-lax-translate-x="(2*vh) elw, (2.8*vh) (-0.9*elw)">Only one</ScriptBlock>
+      <ScriptBlock className="lax" style={{transform: 'translateY(20vh)'}} data-lax-translate-x="(2.8*vh) elw, (3.6*vh) (-0.9*elw)">question</ScriptBlock>
+      {/* <ScriptBlock className="lax" data-lax-translate-x="(2*vh) elw, (2.8*vh) (-0.9*elw)">matters</ScriptBlock> */}
     </Scene2>
   );
 };
@@ -32,7 +34,7 @@ const Scene2  = styled.div`
 const ScriptBlock = styled.div`
   position: fixed;
   left: 1vw;
-  top: 30%;
+  top: 10%;
   text-transform: uppercase;
   width: auto;
   font-size: 16vw;
@@ -43,4 +45,4 @@ const ScriptBlock = styled.div`
 `;
 
 
-export default Script;
+export default withLax(Script);
