@@ -88,13 +88,13 @@ const Introduction = () => {
     const browserHeight = window.innerHeight;
 
     //move 'theSimple ' left
-    const offsetLeftOriginal = switchRef.current.offsetLeft + 0.05 * (browserWidth);
+    const offsetLeftOriginal = switchRef.current.offsetLeft - 0.025 * (browserWidth);
     const offsetLeftOne = 0.5 * (browserWidth - switchRef.current.offsetWidth);
     const moveLeftBy = offsetLeftOriginal - offsetLeftOne;
     setMoveLeftBy(-1*moveLeftBy);
 
     //more 'things in' to the right
-    const leftFromBrowserToThings = thingsRef.current.offsetLeft + 0.05 * browserWidth;
+    const leftFromBrowserToThings = thingsRef.current.offsetLeft - 0.025 * browserWidth;
     const targetOffsetLeft = 0.5 * (browserWidth - thingsRef.current.offsetWidth);
     const moveRightBy = leftFromBrowserToThings - targetOffsetLeft;
     setMoveRightBy(-1* moveRightBy);
@@ -121,12 +121,12 @@ const Introduction = () => {
 
   return (
     <Intro className="lax" ref={ref} data-lax-translate-y="0 0, (2*vh) (2*vh)">
-      <div className="lax" ref={theSimpleThingsInRef}><div  className="lax" ref={theSimpleRef} data-lax-translate-x={`0 0, vh ${moveLeftBy}`} data-lax-translate-y={`0 0, vh ${moveDownBy}`}>
+      <div className="lax" ref={theSimpleThingsInRef} data-lax-translate-y={`0 0, vh ${moveDownBy}`}><div  className="lax" ref={theSimpleRef} data-lax-translate-x={`0 0, vh ${moveLeftBy}`}>
         <span className="lax" ref={theRef} data-lax-opacity="0 1, vh 0">
           The
         </span> <Switch className="lax" ref={switchRef}><span className="lax" ref={simpleRef} data-lax-opacity="vh 1, (2*vh) 0">simple</span><Best className="lax" ref={bestRef} data-lax-opacity="(1.2*vh) 0, (2*vh) 1">best</Best></Switch>
       </div> 
-      <div className="lax" ref={inLifeRef} data-lax-translate-x={`0 0, vh ${moveRightBy}`} data-lax-translate-y={`0 0, vh ${moveDownBy}`}>
+      <div className="lax" ref={inLifeRef} data-lax-translate-x={`0 0, vh ${moveRightBy}`}>
       <span className="lax" ref={thingsRef}>things</span> <span className="lax" ref={inRef} data-lax-opacity="0 1, vh 0">
           in
         </span></div></div> <div className="lax" ref={lifeRef} data-lax-opacity="0 1, vh 0" data-lax-translate-x={`0 0, vh ${moveLeftBy}`}>life.</div>
