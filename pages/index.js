@@ -14,6 +14,16 @@ let something = false;
 function IndexPage () {
   useEffect(() => {
     history.scrollRestoration = 'manual';
+    document.addEventListener('scroll', () => {
+      if ((document.body.scrollHeight - window.innerHeight) - window.scrollY < 150) {
+        if(!something)
+          setTimeout(() => {
+            window.scroll(0, (window.scrollY - 0.25 * window.innerHeight));
+            something = false;
+          }, 1);
+          something = true;
+      }
+    });
   });
 
   return(
@@ -26,14 +36,6 @@ function IndexPage () {
       }}
       onScroll={(e, scrollbar)=> {
         scrollbar.scrollLeft = 0;
-        if ((document.body.scrollHeight - window.innerHeight) - window.scrollY < 10) {
-          if(!something)
-            setTimeout(() => {
-              window.scroll(0, (window.scrollY - 0.5 * window.innerHeight));
-              something = false;
-            }, 1);
-            something = true;
-        }
       }}
     >
       <App style={{overflowX: 'hidden'}}/>
