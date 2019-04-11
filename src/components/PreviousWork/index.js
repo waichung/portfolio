@@ -1,24 +1,29 @@
 import styled from 'styled-components';
-import Scrollbar from 'react-smooth-scrollbar';
+import Jungle from '../General/Icons/Jungle';
+import NextID from '../General/Icons/NextID';
 
 const works = [
 
   {
     title: 'Nestbloom', 
     description: 'Awwward winning design',
-    imgUrl: 'https://via.placeholder.com/300',
+    imgUrl: 'https://drive.google.com/uc?export=view&id=1k4PFp-okLAzW_hkgvHBqzd4Kr3SqPXbs',
     url: 'https://nestbloom.com'
   },
   {
     title: 'Jungle', 
     description: "UK's first 0% commission P2P Betting Platform",
-    imgUrl: 'https://via.placeholder.com/300',
     url: 'https://jungleuk.xyz'
   },
   {
     title: 'NextID', 
     description: 'New frontiers for digital identity',
-    imgUrl: 'https://via.placeholder.com/300',
+    url: 'https://google.com'
+  },
+  {
+    title: 'Island Creamery', 
+    description: 'Uniquely singaporean ice-cream flavours',
+    imgUrl: 'https://drive.google.com/uc?export=view&id=18o4YuNUD8YYfhqslR6UUx2QDC_nV6WKE',
     url: 'https://google.com'
   },
 
@@ -32,7 +37,8 @@ const PreviousWork = () => {
         {works.map((work, i) => {
           return (
             <WorkContainer key={i} data-lax-scale-y={calculateScaleAnimation(5.5, 6, works, i)} data-lax-translate-x={calculateTranslateXAnimation(5.5, 6, works, i)} data-lax-opacity={calculateOpacityAnimation(5.5, 6, works, i)} className="lax">
-              <img src={work.imgUrl}></img>
+              {/* <img src={work.imgUrl}></img> */}
+              {work.imgUrl ? <img src={work.imgUrl}></img> : work.title === 'NextID' ? <NextID /> : <Jungle />}
               <WorkDetails href={work.url}>
                 <WorkTitle>{work.title}</WorkTitle>
                 <Description>{work.description}</Description>
@@ -83,6 +89,16 @@ const WorkContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
+
+  & svg {
+    margin: auto;
+  }
+
+  & img {
+    margin: auto;
+    height: 300px;
+    width: 300px;
+  }
 
 `;
 
