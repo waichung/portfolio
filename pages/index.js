@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic';
-import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
 import { useEffect, useState } from 'react';
 
@@ -10,6 +9,8 @@ const App = dynamic(
   }
 );
 
+let something = false;
+
 function IndexPage () {
   useEffect(() => {
     history.scrollRestoration = 'manual';
@@ -17,7 +18,7 @@ function IndexPage () {
 
   return(
     <Scrollbar
-      style={{height: '600vh', width: '100vw', maxWidth: '100%', overflowX: 'hidden'}}
+      style={{height: '700vh', width: '100vw', maxWidth: '100%', overflowX: 'hidden'}}
       damping={0.000000001}
       renderByPixels={true}
       plugins={{
@@ -25,6 +26,14 @@ function IndexPage () {
       }}
       onScroll={(e, scrollbar)=> {
         scrollbar.scrollLeft = 0;
+        if ((document.body.scrollHeight - window.innerHeight) - window.scrollY < 10) {
+          if(!something)
+            setTimeout(() => {
+              window.scroll(0, (window.scrollY - 0.5 * window.innerHeight));
+              something = false;
+            }, 1);
+            something = true;
+        }
       }}
     >
       <App style={{overflowX: 'hidden'}}/>

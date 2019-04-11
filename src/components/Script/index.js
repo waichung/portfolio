@@ -4,6 +4,7 @@ import withLax from '../HOC/withLax';
 import SceneTemplate from '../General/Scene';
 import LinkedIn from '../General/Icons/LinkedIn';
 import Github from '../General/Icons/Github';
+import PreviousWork from '../PreviousWork';
 
 const Script = () => {
   const ref = useRef();
@@ -30,7 +31,7 @@ const Script = () => {
 
   return (
     <React.Fragment>
-      <Scene className="lax" data-lax-translate-y={`(${stopScroll}*vh) (1*vh), (5*vh) (2.9*vh)`}>
+      <Scene className="lax" data-lax-translate-y={`(${stopScroll}*vh) (1*vh), (6*vh) (3.9*vh)`}>
         <ScriptBlock className="lax" data-lax-translate-x="(2*vh) elw, (2.8*vh) (-0.9*elw)" data-lax-translate-y="(4.6*vh) 0, (4.8*vh) (0.25*vh)">
         <Switch><span className="lax" data-lax-opacity="(4.4*vh) 1, (4.8*vh) 0"><DisperseToLeft>Onl</DisperseToLeft><InlineSpan className="lax" data-lax-translate-x="(4.4*vh) 0, (4.8*vh) -50">y</InlineSpan> <DisperseToRight>one</DisperseToRight></span><WHYNOT className="lax" data-lax-opacity="0 0, (4.6*vh) 0, (4.8*vh) 1">WHY NOT <br/><Tagline>Software development made simple</Tagline></WHYNOT></Switch></ScriptBlock>
         <ScriptBlock style={{ height: '65vh', transform: 'translateY(30vh)'}} className="lax" data-lax-translate-x="(2.8*vh) elw, (3.6*vh) (-0.9*elw)"><DisperseToLeft>Que</DisperseToLeft><Switch className="lax" data-lax-translate-y="(4.6*vh) 0, (4.8*vh) (0.245*vh)" data-lax-translate-x="(4.6*vh) 0, (4.8*vh) (-0.05*vw)"><span className="lax" data-lax-opacity="(4.4*vh) 1, (4.8*vh) 0">s</span><WHY className="lax" data-lax-opacity="(4.6*vh) 0, (4.8*vh) 1" data-lax-translate-y={`(4.8*vh) 0, (5*vh) (${moveYWhy}*vh)`} data-lax-translate-x={`(4.8*vh) 0, (5*vh) (${moveXWhy}*vw)`} data-lax-rotate={`(4.8*vh) 0, (5*vh) ${rotateWhy}`} data-lax-scale={`(4.8*vh) 1, (5*vh) ${scaleSize}`}>?</WHY></Switch><DisperseToRight>tion</DisperseToRight></ScriptBlock>
@@ -39,6 +40,7 @@ const Script = () => {
           <IconLink href="https://www.linkedin.com/in/wai-chung-wong-b4a24817b/"><LinkedIn/></IconLink>
           <IconLink href="https://github.com/waichung"><Github/></IconLink>
         </IconsContainer>
+        <PreviousWork/>
       </Scene>
     </React.Fragment>
   );
