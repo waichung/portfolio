@@ -11,12 +11,6 @@ const App = dynamic(
 
 function IndexPage () {
   useEffect(() => {
-    // window.scroll(0, 0);
-    // // window.scrollY = 0;
-    // console.log(window);
-    // console.log('hey');
-    // setTimeout(() => window.scroll(0, 0), 1000);
-    console.log(history);
     history.scrollRestoration = 'manual';
   });
 
