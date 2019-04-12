@@ -18,13 +18,13 @@ const works = [
   {
     title: 'NextID', 
     description: 'New frontiers for digital identity',
-    url: 'https://google.com'
+    url: 'http://tinyurl.com/nextcert-proto'
   },
   {
     title: 'Island Creamery', 
     description: 'Uniquely singaporean ice-cream flavours',
     imgUrl: 'https://drive.google.com/uc?export=view&id=18o4YuNUD8YYfhqslR6UUx2QDC_nV6WKE',
-    url: 'https://google.com'
+    url: 'http://35.222.75.247'
   },
 
 ];
